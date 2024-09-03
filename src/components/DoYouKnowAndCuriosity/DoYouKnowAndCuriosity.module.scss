@@ -1,0 +1,7 @@
+@import "../../scss/variables_mixins.scss";
+
+.container {
+  display: flex;
+  gap: $gapDefault;
+  flex-wrap: wrap;
+}

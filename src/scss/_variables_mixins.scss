@@ -1,0 +1,89 @@
+@function rem($pixel, $contexto: 16) {
+  @return $pixel / $contexto+rem;
+}
+
+@mixin typographyDefault($size, $color: $white, $fontFamily: $font-1) {
+  font-family: $fontFamily;
+  color: $color;
+
+  @if $size==14 {
+    font-size: rem(14);
+    line-height: rem(30, 14);
+  } @else if $size==16 {
+    font-size: rem(16);
+    line-height: rem(30);
+  } @else if $size==18 {
+    font-size: rem(18);
+    line-height: rem(30, 18);
+  } @else if $size==24 {
+    font-size: rem(24);
+    line-height: rem(30, 24);
+  } @else if $size==28 {
+    font-size: rem(28);
+    line-height: rem(30, 28);
+  }
+}
+
+$large: 1360px;
+$medium: 1130px;
+$small: 768px;
+
+$blue: #45B2F5;
+$green: #28A745;
+$white: #fff;
+$black: #000;
+$red: #c82333;
+$yellow: #FFCB05;
+$gray: #6C757D;
+
+$sectionBackgroundDefault: rgba(0, 0, 0, .8);
+
+$spaceDefault: rem(20);
+$gapDefault: rem(12);
+$spaceTitle: rem(40) 0;
+
+$borderRadiusDefault: rem(4);
+
+$shadowC: 0 2px 4px 0 rgba(0, 0, 0, .08),
+0 4px 8px 5px rgba(0, 0, 0, .2);
+
+$shadowE: 3px 4px 4px 2px rgba(0, 0, 0, .2),
+4px 6px 8px 2px rgba(0, 0, 0, .4);
+
+$font-1: 'Open Sans', sans-serif;
+
+$font-2: 'Red Hat Display', sans-serif;
+
+@mixin sectionContainer {
+  @include typographyDefault(18);
+  padding: $spaceDefault;
+  display: flex;
+  flex-wrap: wrap;
+  gap: $gapDefault;
+  border-radius: $borderRadiusDefault;
+}
+
+@mixin title {
+  @include typographyDefault(28, $white, $font-2);
+  padding: $spaceTitle;
+}
+
+@mixin mediaQuery($breakpoint, $value) {
+  @if $breakpoint == large {
+    @media (max-width: $large) {
+      @content;
+    }
+  } @else if $breakpoint == medium {
+    @media only screen and (min-width: #{$small - 1px}) and (max-width: #{$large - 1px}) {
+      @content;
+    }
+  } @else if $breakpoint == small {
+    @media only screen and (max-width: $small) {
+      @content;
+    }
+  } @else if $breakpoint == custom {
+    @media only screen and (max-width: $value) {
+      @content;
+    }
+  }
+}

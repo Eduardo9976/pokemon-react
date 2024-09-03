@@ -1,0 +1,51 @@
+@import "../../scss/variables_mixins.scss";
+
+.container {
+  @include sectionContainer;
+  background: $sectionBackgroundDefault;
+  justify-content: center;
+  align-items: center;
+
+  .link {
+    width: 100%;
+    font-size: rem(14);
+
+    a {
+      color: $yellow;
+    }
+  }
+
+  .card {
+    width: 212px;
+    height: 220px;
+    border: 2px solid $yellow;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: grid;
+    place-items: center;
+    padding: $gapDefault;
+
+    .imgContainer {
+      width: 120px;
+      height: 120px;
+      display: grid;
+      place-items: center;
+    }
+
+    &.yellow {
+      background: $yellow;
+    }
+
+    &.green {
+      background: $green;
+    }
+
+    &.blue {
+      background: $blue;
+    }
+
+    &.red {
+      background: $red;
+    }
+  }
+}

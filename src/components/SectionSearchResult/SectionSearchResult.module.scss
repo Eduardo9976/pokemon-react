@@ -1,0 +1,84 @@
+@import "../../scss/variables_mixins.scss";
+
+.container {
+  @include sectionContainer;
+  background: $sectionBackgroundDefault;
+  flex-direction: column;
+
+  .detailsContainer {
+    display: flex;
+    gap: $gapDefault;
+    flex-wrap: wrap;
+
+    .detailsInformations {
+      display: flex;
+      gap: $gapDefault;
+      flex-wrap: wrap;
+    }
+  }
+
+  .imageContainer {
+    flex: 1;
+    border-radius: 4px;
+    background: rgba(0, 0, 0, .4);
+    margin-bottom: $gapDefault;
+
+    .imageCard {
+      background: no-repeat center center/contain;
+      width: 200px;
+      height: 200px;
+      margin: 0 auto;
+    }
+
+    .imageDefault {
+      display: grid;
+      place-items: center;
+      max-width: 100%;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .informationList {
+    width: 180px;
+    margin: rem(4) $gapDefault;
+    cursor: pointer;
+
+    &:hover {
+      color: $blue;
+    }
+
+    &.statistics {
+      cursor: initial;
+
+      &:hover {
+        color: $white;
+
+      }
+    }
+  }
+
+  .detailsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $gapDefault;
+
+    @include mediaQuery(custom, 891px) {
+      flex-direction: column;
+    }
+
+    .detailsContainerColumn {
+      flex: 1;
+    }
+
+    .abilitiesDetails {
+      background: $blue;
+      color: $black;
+      height: 200px;
+      padding: $gapDefault;
+      border-radius: 4px;
+      margin-bottom: $gapDefault;
+
+    }
+  }
+}

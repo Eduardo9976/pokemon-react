@@ -1,0 +1,22 @@
+@import "../../scss/_variables_mixins.scss";
+
+@mixin flex {
+  display: flex;
+  flex-direction: column;
+  gap: $gapDefault;
+}
+
+.layout {
+  @include flex;
+  background: url("../../assets/natureCloud.png") $blue center center repeat-y;
+  background-size: cover;
+  min-height: 100vh;
+
+  &Container {
+    @include flex;
+    max-width: $large;
+    width: 100%;
+    margin: 0 auto;
+
+  }
+}

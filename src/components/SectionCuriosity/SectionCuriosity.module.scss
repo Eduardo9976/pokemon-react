@@ -1,0 +1,14 @@
+@import "../../scss/variables_mixins.scss";
+
+.container {
+  @include sectionContainer;
+  flex-direction: column;
+  justify-content: space-between;
+  background: $sectionBackgroundDefault;
+  flex: 1 1 370px;
+
+  .imageContainer {
+    display: grid;
+    place-items: center;
+  }
+}

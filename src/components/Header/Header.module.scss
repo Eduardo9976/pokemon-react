@@ -1,0 +1,8 @@
+@import "../../scss/_variables_mixins.scss";
+
+.header {
+  background: $yellow;
+  padding: $spaceDefault;
+  box-shadow: $shadowC;
+  user-select: none;
+}

@@ -1,0 +1,44 @@
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: $borderRadiusDefault;
+}
+
+h1 {
+  @include title;
+  line-height: 1;
+  width: 100%;
+
+  &::after {
+    display: block;
+    content: "";
+    width: rem(65);
+    height: rem(2);
+    background: $yellow;
+    margin-top: $gapDefault;
+  }
+}
+
+button {
+  max-width: 154px;
+  width: 100%;
+  height: 34px;
+  cursor: pointer;
+  background-color: $yellow;
+  font-weight: bold;
+  color: $white;
+  border: 2px solid $yellow;
+  border-radius: 4px;
+  outline: none;
+
+  &:hover {
+    background: $blue;
+  }
+
+  &:disabled {
+    background: $gray;
+    border: 2px solid $gray;
+    cursor: not-allowed;
+  }
+}

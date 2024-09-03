@@ -1,0 +1,41 @@
+@import "../../scss/variables_mixins.scss";
+
+.container {
+  @include sectionContainer;
+  background: $sectionBackgroundDefault;
+
+  .highlight {
+    color: $yellow;
+  }
+
+  .button {
+    align-self: flex-end;
+  }
+
+  .form {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: $gapDefault;
+
+    fieldSet {
+      display: flex;
+      flex-direction: column;
+      gap: $gapDefault;
+
+      &:nth-child(2) {
+        flex: 10 1 180px;
+      }
+
+      input, select {
+        border: 0;
+        height: 34px;
+        border-radius: 4px;
+
+        &:focus {
+          outline: 2px solid $yellow;
+        }
+      }
+    }
+  }
+}

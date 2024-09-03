@@ -1,0 +1,8 @@
+@import "../../scss/variables_mixins.scss";
+
+.container {
+  @include sectionContainer;
+  flex-direction: column;
+  background: $sectionBackgroundDefault;
+  flex: 1 1 370px;
+}

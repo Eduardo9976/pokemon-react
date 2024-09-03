@@ -1,0 +1,25 @@
+@import "../../scss/variables_mixins.scss";
+
+.container {
+  @include sectionContainer;
+  justify-content: space-between;
+  background: $sectionBackgroundDefault;
+
+  .content {
+    flex: 1 1 30%;
+  }
+
+  .image {
+    flex: 2 1 280px;
+  }
+
+  .highlight {
+    $highlightShadowColor: #356fae;
+    color: $yellow;
+    padding-left: rem(4);
+    text-shadow: 2px 1px 0 $highlightShadowColor,
+    -1px 0px 0px $highlightShadowColor,
+    1px 2px 0px $highlightShadowColor,
+    0px 3px 0px $highlightShadowColor;
+  }
+}

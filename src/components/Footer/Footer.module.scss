@@ -1,0 +1,24 @@
+@import "../../scss/_variables_mixins.scss";
+
+.footer {
+  @include typographyDefault(18);
+  gap: $gapDefault;
+  margin-top: $spaceDefault;
+  padding: $spaceDefault;
+  background: $yellow;
+  display: flex;
+  justify-content: center;
+
+  p {
+    font-weight: bold;
+  }
+
+  ul {
+    display: flex;
+    gap: $gapDefault;
+
+    a {
+      color: inherit;
+    }
+  }
+}
